@@ -4,82 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML CSS编码</title>
-    <style>
-    	html,body,ul{
-	margin: 0;
-	padding: 0;
-}
-body{
-	background: #DEDEDE;
-	min-width: 778px;
-}
-.article-img{
-	width: 300px;
-	height: 240px;
-}
-header{
-	height: 60px;
-	width: 100%;
-	background: #333333;
-	min-width: 778px;
-}
-footer{
-	height: 60px;
-	width: 100%;
-	background: #333333;
-	min-width: 778px;
-	text-align: center;
-	line-height: 60px;
-	color: white;
-}
-.img-logo{
-	height: 40px;
-	width: 130px;
-	padding: 10px 0;
-	margin-left: 50px;
-}
-.header-ul{
-	height: 64px;
-	float: right;
-}
-.header-ul>li{
-	float: left;
-	width: 100px;	
-}
-.header-ul>li>a{
-	color: white;
-	text-decoration: none;
-	line-height: 60px;
-}
-.container{
-	min-width: 800px;
-	width: 95%;
-	margin:0 auto;
-	*zoom:1;
-	overflow:hidden;
-}
-.container:after{
-	content: '';
-	display: table;
-	clear: both;
-}
-.main-container{
-	margin-right: 465px;
-	margin-top: 30px;
-}
-section{
-	padding: 20px;
-	background: white;
-	margin: 20px 0;
-}
-aside{
-	float: right;
-	width: 365px;
-	height: 500px;
-	margin-top: 30px;
-	background: white;
-}
-    </style>
+    <link rel="stylesheet" href="css/task5.css">
 </head>
 
 <body>
@@ -93,8 +18,33 @@ aside{
         </ul>
     </header>
     <div class="container">
-		<aside onclick="clickAside()"></aside>
-        <div class="main-container" onclick="clickMain()">
+		<aside>
+			<div class="aside-title">这里以后是一个侧栏，这里是侧栏的标题</div>
+            <div class="aside-input-line">
+                <label for="email-address" class="aside-left">请输入邮箱地址</label>
+                <input type="text" class="aside-input" id="email-address">
+            </div>
+            <div class="email-hint aside-input-line">
+                邮箱地址请按要求格式输入
+            </div>
+            <div class="aside-input-line">
+                <label for="password" class="aside-left">请输入密码</label>
+                <input type="password" class="aside-input" id="password">
+            </div>
+            <div class="aside-input-line">
+                <label for="password-repeat" class="aside-left">请重复输入密码</label>
+                <input type="password" class="aside-input" id="password-repeat">
+            </div>
+            <div class="email-hint aside-input-line">
+                密码请为6-16位英文数字
+            </div>
+            <div class="aside-input-line">
+                <label class="aside-left">性别</label>
+                <label><input type="radio" name="sex">男</label>
+                <label><input type="radio" name="sex">女</label>
+            </div>
+		</aside>
+        <div class="main-container">
             <section>
                 <h2>文章一级标题</h2>
                 <h3>文章二级标题</h3>
@@ -112,7 +62,7 @@ aside{
                 <article>
                     <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落， 这里有一个链接到<a href="ttp://ife.baidu.com">http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落。</p>
                     <img src="img/ife-3.jpg" alt="图片" class="article-img">
-                    <ol>
+                    <ol class="no-list-style">
                     	<li>项目列表一</li>
                     	<li>项目列表二</li>
                     	<li>项目列表三</li>
@@ -123,8 +73,36 @@ aside{
                 <h2>图片</h2>
                 <article>
                     <div class="img-part">
-                    	<span>好看的图片</span>
-                    	<img src="img/ife-3.jpg" alt="图片">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
+                    </div>
+                    <div class="img-part">
+                    	<div>好看的图片</div>
+                    	<img src="img/ife-3.jpg" alt="图片" class="small-img">
                     </div>
                 </article>
             </section>
@@ -141,11 +119,11 @@ aside{
 
                     <p>下面是一个表格</p>
                     <table>
-                    	<th>
-                    		<td>表头</td>
-                    		<td>表头</td>
-                    		<td>表头</td>
-                    	</th>
+                    	<tr>
+                    		<th>表头</th>
+                    		<th>表头</th>
+                    		<th>表头</th>
+                    	</tr>
                     	<tr>
                     		<td>表内容单元格</td>
                     		<td>表内容单元格</td>
@@ -169,17 +147,8 @@ aside{
                 </article>
             </section>
         </div>
-        
     </div>
     <footer>版权所有</footer>
-    <script>
-    	function clickAside() {
-    		console.log("aside");
-    	}
-    	function clickMain(){
-    		console.log("main");
-    	}
-    </script>
 </body>
 
 </html>

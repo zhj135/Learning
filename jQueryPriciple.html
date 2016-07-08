@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Priceple</title>
+</head>
+
+<body>
+    <button id="button">点击我</button>
+    <img id="image" src="img/logo.png">
+    <script>
+    var F = function(selector){
+    	return this.getNodeList(selector);
+    }
+    F.prototype.getNodeList = function(selector){
+    	this.element =  document.querySelectorAll(selector);
+    	return this;
+    }
+    // F.prototype.each = function(){
+    // 	var i = 0,length = this.element.length;
+    // 	for(;i<length;i++){
+
+    // 	}
+    // }
+    F.prototype.click = function(fun){
+    	for(var i=0;i<this.element.length;i++){
+    		this.element[i].onclick = fun;
+    	}
+    	return this;
+    }
+    F.prototype.hide = function(){
+    	for(var i=0;i<this.element.length;i++){
+    		this.element[i].style.display = 'none';
+    	}
+    	return this;
+    }
+    F.prototype.show = function(){
+    	for(var i=0;i<this.element.length;i++){
+    		this.element[i].style.display = 'inline';
+    	}
+    	return this;
+    }
+    var $ = function(selector){
+    	return new F(selector);
+    }
+    // $('#image').hide().show();
+    $('#button').click(function() {
+        $('#image').hide();
+    });
+    </script>
+</body>
+
+</html>

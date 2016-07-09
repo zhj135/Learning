@@ -38,7 +38,16 @@ function getData() {
   /*
   coding here
   */
-
+  var data = [],tempArray = [];
+  var source = document.getElementById('source');
+  var li = source.getElementsByTagName('li');
+  var b = source.getElementsByTagName('b');
+  for(var i=0;i<li.length;i++){
+    tempArray = [];
+    tempArray.push(li[i].innerHTML.substr(0,2));
+    tempArray.push(parseInt(b[i].innerHTML));
+    data.push(tempArray);
+  }
   /*
   data = [
     ["北京", 90],
@@ -50,14 +59,17 @@ function getData() {
   return data;
 
 }
-
+getData();
 /**
  * sortAqiData
  * 按空气质量对data进行从小到大的排序
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-
+  data = data.sort(function(a,b){
+    return b[1]-a[1];
+  });
+  return data;
 }
 
 /**
@@ -66,7 +78,15 @@ function sortAqiData(data) {
  * 格式见ul中的注释的部分
  */
 function render(data) {
+  var list = document.getElementById('resort')
+      cityArray = [];
+  for(i=0;i<data.length;i++){
+    var arr = ["一","二","三","四","五","六","七"];
+    cityArray[i] = "<li>第" +arr[i]+"名： "+ data[i][0] +'空气质量：<b> '+ data[i][1]+"</b></li>";
+  }
+  cityArray = cityArray.toString().replace(/,/g,'');
 
+  list.innerHTML = cityArray;
 }
 
 function btnHandle() {
@@ -79,7 +99,8 @@ function btnHandle() {
 function init() {
 
   // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-
+  var btn = document.getElementById('sort-btn');
+  btn.addEventListener("click",btnHandle);
 }
 
 init();

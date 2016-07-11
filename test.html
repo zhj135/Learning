@@ -3,182 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HTML CSS编码</title>
+    <title>test</title>
     <style>
-    	html,body,ul{
-	margin: 0;
-	padding: 0;
-}
-body{
-	background: #DEDEDE;
-	min-width: 778px;
-}
-.article-img{
-	width: 300px;
-	height: 240px;
-}
-header{
-	height: 60px;
-	width: 100%;
-	background: #333333;
-	min-width: 778px;
-}
-footer{
-	height: 60px;
-	width: 100%;
-	background: #333333;
-	min-width: 778px;
-	text-align: center;
-	line-height: 60px;
-	color: white;
-}
-.img-logo{
-	height: 40px;
-	width: 130px;
-	padding: 10px 0;
-	margin-left: 50px;
-}
-.header-ul{
-	height: 64px;
-	float: right;
-}
-.header-ul>li{
-	float: left;
-	width: 100px;	
-}
-.header-ul>li>a{
-	color: white;
-	text-decoration: none;
-	line-height: 60px;
-}
-.container{
-	min-width: 800px;
-	width: 95%;
-	margin:0 auto;
-	*zoom:1;
-	overflow:hidden;
-}
-.container:after{
-	content: '';
-	display: table;
-	clear: both;
-}
-.main-container{
-	margin-right: 465px;
-	margin-top: 30px;
-}
-section{
-	padding: 20px;
-	background: white;
-	margin: 20px 0;
-}
-aside{
-	float: right;
-	width: 365px;
-	height: 500px;
-	margin-top: 30px;
-	background: white;
-}
+    input {
+            width: 240px;
+    height: 36px;
+    margin: 0 10px;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+    top: 47px;
+    z-index: 10;
+    }
     </style>
 </head>
 
 <body>
-    <header>
-        <img src="img/logo.png" alt="logo" class="img-logo">
-        <ul class="header-ul">
-            <li><a href="#">导航链接一</a></li>
-            <li><a href="#">导航链接二</a></li>
-            <li><a href="#">导航链接三</a></li>
-            <li><a href="#">导航链接四</a></li>
-        </ul>
-    </header>
-    <div class="container">
-		<aside onclick="clickAside()"></aside>
-        <div class="main-container" onclick="clickMain()">
-            <section>
-                <h2>文章一级标题</h2>
-                <h3>文章二级标题</h3>
-                <span>文章作者 文章发表时间</span>
-                <article>
-                    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落， 这里有一个链接到<a href="ttp://ife.baidu.com">http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落。</p>
-                    <img src="img/ife-3.jpg" alt="图片" class="article-img">
-                    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落， 这里有一个链接到<a href="ttp://ife.baidu.com">http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落。</p>
-                </article>
-            </section>
-            <section>
-                <h2>另一篇文章一级标题</h2>
-                <h3>文章二级标题</h3>
-                <span>文章作者 文章发表时间</span>
-                <article>
-                    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落，换行了 <br>这是一个很长很长的段落，这是一个很长很长的段落， 这里有一个链接到<a href="ttp://ife.baidu.com">http://ife.baidu.com</a>这是一个很长很长的段落，这里有个粗体字 这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落， 这是一个很长很长的段落，这是一个很长很长的段落。</p>
-                    <img src="img/ife-3.jpg" alt="图片" class="article-img">
-                    <ol>
-                    	<li>项目列表一</li>
-                    	<li>项目列表二</li>
-                    	<li>项目列表三</li>
-                    </ol>
-                </article>
-            </section>
-             <section>
-                <h2>图片</h2>
-                <article>
-                    <div class="img-part">
-                    	<span>好看的图片</span>
-                    	<img src="img/ife-3.jpg" alt="图片">
-                    </div>
-                </article>
-            </section>
-            <section>
-                <h2>最后一篇文章一级标题</h2>
-                <h3>文章二级标题</h3>
-                <span>文章作者 文章发表时间</span>
-                <article>
-                	<ol>
-                		<li>排名1</li>
-                		<li>排名2</li>
-                		<li>排名3</li>
-                	</ol>
-
-                    <p>下面是一个表格</p>
-                    <table>
-                    	<th>
-                    		<td>表头</td>
-                    		<td>表头</td>
-                    		<td>表头</td>
-                    	</th>
-                    	<tr>
-                    		<td>表内容单元格</td>
-                    		<td>表内容单元格</td>
-                    		<td>操作</td>
-                    	</tr>
-                    	<tr>
-                    		<td>表内容单元格</td>
-                    		<td>表内容单元格</td>
-                    		<td>操作</td>
-                    	</tr>
-                    	<tr>
-                    		<td>表内容单元格</td>
-                    		<td>表内容单元格</td>
-                    		<td>操作</td>
-                    	</tr>
-                    	<tr>
-                    		<td>总计</td>
-                    		<td colspan="2">1000</td>
-                    	</tr>
-                    </table>
-                </article>
-            </section>
-        </div>
-        
-    </div>
-    <footer>版权所有</footer>
+    <input type="radio" name="select">
     <script>
-    	function clickAside() {
-    		console.log("aside");
-    	}
-    	function clickMain(){
-    		console.log("main");
-    	}
     </script>
 </body>
 

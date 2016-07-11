@@ -1,0 +1,143 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	font-family: "MicrosoftYaHei";
+}
+header,section{
+	display: block;
+}
+.container{
+	width: 892px;
+	height: 1386px;
+	margin: 0 auto;
+	padding: 0 44px;
+}
+header{
+	width: 892px;
+	height: 61px;
+	font-family: SimHei;
+	border-bottom: 2px solid #938e8c;
+	margin-bottom: 25px;
+}
+.head-logo{
+	display: inline-block;
+	vertical-align: top;
+	background: #d45d5c;
+	height: 16px;
+	width: 105px;
+	font-size: 12px;
+	color: #ffffff;
+	padding-top: 45px;
+	padding-left: 5px;
+}
+.head-date{
+	float: right;
+	padding-top: 45px;
+	color: #d45d5c;
+}
+.top-left{
+	width: 641px;
+	margin-right: 251px;
+}
+.top-left-img-container,.top-left-img{
+	position: relative;
+	width: 641px;
+	height: 301px;
+}
+.top-left-img-left{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 301px;
+	width: 191px;
+	background: #75b86b;
+	opacity: 0.2;
+	filter: alpha(opacity=20); 
+}
+.top-left-img-right{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 301px;
+	width: 191px;
+	background: #d45d5c;
+	opacity: 0.2;
+	filter: alpha(opacity=20); 
+}
+.top-right{
+	float: right;
+	width: 203px;
+	height: 299px;
+	border-top: 2px solid #cc8091;
+}
+.top-left-atricle-container{
+	margin: 20px 0  30px 0;
+}
+.top-left-atricle{
+	display: inline-block;
+	width: 190px;
+	margin-right: 18px;
+}
+.top-left-atricle-head{
+	text-decoration: underline;
+	font-size: 16px;
+	font-weight: bold;
+}
+.top-left-atricle-head.head1{
+	color: #75b86b;
+}
+.top-left-atricle-head.head2{
+	color: #d2994f;
+}
+.top-left-atricle-head.head3{
+	color: #cc7680;
+}
+.top-left-atricle-content{
+	font-size: 12px;
+	color:#231815;
+	line-height: 16px;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+.top-right-head{
+	font-size: 24px;
+	color: #000;
+	text-decoration: underline;
+	line-height: 40px;
+}
+.top-right-head-inf{
+	font-size: 12px;
+	color:#676767;
+	font-family:  "楷体","楷体_GB2312";
+	line-height: 10px;
+	margin-bottom: 20px;
+}
+.top-right-middle{
+	font-size: 116px;
+	font-style: italic;
+	color: #75b86b;
+}
+.top-right-bottom{
+	margin-top: -5px;
+	font-size: 55px;
+	color: #cc8091;
+}
+.top-right-bottom-left,.top-right-bottom-right{
+	display: inline-block;
+	vertical-align: top;
+}
+.top-right-bottom-right{
+	padding-top: 16px;
+	height: 63px;
+	width: 100px;
+}
+.top-right-bottom-right-mid{
+	width: 100%;
+	font-size: 21px;
+	color: #cc8091;
+}
+.top-right-bottom-right-bottom{
+	width: 100%;
+	font-size: 12px;
+	color: #cc8091;
+}

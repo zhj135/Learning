@@ -58,31 +58,10 @@ function renderChart() {
   var city = pageState.nowSelectCity,
       type = pageState.nowGraTime;
   var content = '';
-  for(var key in chartData){
-      if(chartData[key]<100){
-        content += '<div style="background:green;height:'+ chartData[key] +'px" class="day" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>';
-      }else if(chartData[key]<300){
-        content += '<div style="background:red;height:'+ chartData[key] +'px" class="day" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>';
-      }else{
-        content += '<div style="background:black;height:'+ chartData[key] +'px" class="day" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>'; 
-      } 
-  }
-  content += '<div class="placeholder"></div>'
-  chart.innerHTML = content;
-}
-
-/**
- * 日、周、月的radio事件点击时的处理函数
- */
-function graTimeChange() {
-  // 确定是否选项发生了变化 
-  pageState.nowGraTime = this.value;
-  pageState.nowSelectCity;
-  // 设置对应数据
-  chartData = aqiSourceData[pageState.nowSelectCity];
-  switch(pageState.nowGraTime){
+  chartData = aqiSourceData[city];
+  switch(type){
     case('day'):
-      chartData = aqiSourceData[pageState.nowSelectCity];
+      chartData = aqiSourceData[city];
       break;
     case('week'):
       var initialDay = 5,
@@ -127,6 +106,28 @@ function graTimeChange() {
         chartObj[lastMonth+'月：'] = Math.round(total/countDay);
       chartData = chartObj;
   }
+  for(var key in chartData){
+      if(chartData[key]<100){
+        content += '<div style="background:#24385e;height:'+ chartData[key] +'px" class="'+type+'" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>';
+      }else if(chartData[key]<300){
+        content += '<div style="background:#edae9e;height:'+ chartData[key] +'px" class="'+type+'" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>';
+      }else{
+        content += '<div style="background:#9ea7bb;height:'+ chartData[key] +'px" class="'+type+'" title="日期：'+ key +'数据：'+ chartData[key] +'"></div>'; 
+      } 
+  }
+  content += '<div class="placeholder"></div>';
+  chart.innerHTML = content;
+}
+
+/**
+ * 日、周、月的radio事件点击时的处理函数
+ */
+function graTimeChange() {
+  // 确定是否选项发生了变化 
+  pageState.nowGraTime = this.value;
+  // 设置对应数据
+
+  
   // 调用图表渲染函数
   renderChart()
 }
@@ -138,11 +139,11 @@ function citySelectChange() {
   
   // 设置对应数据
   pageState.nowSelectCity = this.value;
-  chartData = aqiSourceData[pageState.nowSelectCity]
+
   // 调用图表渲染函数
-  console.log(pageState.nowGraTime)
+  
   // graTimeChange()
-  // renderChart()
+  renderChart()
 }
 
 /**
@@ -191,6 +192,7 @@ function init() {
   initGraTimeForm()
   initCitySelector();
   initAqiChartData();
+  renderChart()
 }
 
 init();

@@ -79,20 +79,53 @@ function graTimeChange() {
   pageState.nowGraTime = this.value;
   pageState.nowSelectCity;
   // 设置对应数据
-  chartData = aqiSourceData[pageState.nowSelectCity]
-  var totalDay = 31;
+  chartData = aqiSourceData[pageState.nowSelectCity];
   switch(pageState.nowGraTime){
     case('day'):
+      chartData = aqiSourceData[pageState.nowSelectCity];
       break;
     case('week'):
-      console.log(aqiSourceData[pageState.nowSelectCity]);
+      var initialDay = 5,
+          countWeek = 1;
+      countDay = 0;
+      total = 0;
+      chartObj = {};
+      for(var key in chartData){ 
+        if(initialDay <= 7){
+          total += chartData[key];
+          countDay++;
+          initialDay++; 
+        }else{
+          chartObj['第'+ countWeek +'周'] = Math.round(total/countDay);
+          total = chartData[key];
+          countDay = 1;
+          initialDay = 2;
+          countWeek++;
+        }
+      }    
+      chartObj['第'+ countWeek++ +'周'] = Math.round(total/countDay);
+      chartData = chartObj;
       break;
     case('month'):
-      var i = 0;
-      for(var key in chartData){
-
+      var countDay = 0,
+          total = 0,
+          initialMonth = '01',
+          lastMonth = '',
+          chartObj = {};
+      for(var key in chartData){ 
+        if(key.slice(5,7) === initialMonth){
+          total += chartData[key];
+          countDay++;
+          lastMonth = key.slice(5,7);
+        }else{
+          chartObj[initialMonth+'月：'] = Math.round(total/countDay);
+          initialMonth = key.slice(5,7);
+          total = chartData[key];
+          countDay = 1;
         }
       }
+        chartObj[lastMonth+'月：'] = Math.round(total/countDay);
+      chartData = chartObj;
   }
   // 调用图表渲染函数
   renderChart()
@@ -107,7 +140,9 @@ function citySelectChange() {
   pageState.nowSelectCity = this.value;
   chartData = aqiSourceData[pageState.nowSelectCity]
   // 调用图表渲染函数
-  renderChart()
+  console.log(pageState.nowGraTime)
+  // graTimeChange()
+  // renderChart()
 }
 
 /**

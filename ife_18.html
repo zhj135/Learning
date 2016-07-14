@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟队列</title>
+	<style>
+		.number-line{
+			margin-top: 10px;
+		}
+		.number-wrap{
+			cursor: pointer;
+			float: left;
+			height: 30px;
+			width: 30px;
+			background: red;
+			color: white;
+			text-align: center;
+			line-height: 30px;
+			margin-right:10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="input-line" >
+		<input type="number" value="" placeholder="请输入数字">
+		<input type="button" value="左侧入">
+		<input type="button" value="右侧入">
+		<input type="button" value="左侧出">
+		<input type="button" value="右侧出">
+	</div>
+	<div class="number-line">
+		<span class="number-wrap">10</span>
+		<span class="number-wrap">3</span>
+		<span class="number-wrap">7</span>
+		<span class="number-wrap">11</span>
+		<span class="number-wrap">12</span>
+		<span class="number-wrap">30</span>
+	</div>
+	<script>
+		(function(){
+			function delNumber(){
+				this.parentNode.removeChild(this);
+			}
+			var number = document.querySelectorAll('.number-wrap');
+			var btn = document.querySelectorAll('input[type=button]');
+			var input = document.querySelectorAll('input')[0];
+			var numberLine = document.querySelector('.number-line');
+			var newItem,allNumber;
+			for(var i in number){
+				number[i].onclick = delNumber;
+			}
+			
+			for(i in btn){
+				switch(btn[i].value){
+					case '左侧入':
+						btn[i].onclick = function(){
+							newItem = document.createElement('span');
+							if(isNaN(parseFloat(input.value))){
+								alert('请输入正确数字')
+							}else{
+								newItem.innerHTML = input.value;
+								newItem.className = 'number-wrap';
+								newItem.onclick = delNumber;
+								numberLine.insertBefore(newItem,numberLine.childNodes[0]);
+							}
+						}
+						break;
+					case '右侧入':
+						btn[i].onclick = function(){
+							newItem = document.createElement('span');
+							if(isNaN(parseFloat(input.value))){
+								alert('请输入正确数字')
+							}else{
+								newItem.innerHTML = input.value;
+								newItem.className = 'number-wrap';
+								newItem.onclick = delNumber;
+								numberLine.appendChild(newItem);
+							}
+						}
+						break;
+					case '左侧出':
+						btn[i].onclick = function(){
+							allNumber = document.querySelectorAll('.number-wrap');
+							if(allNumber.length){
+								numberLine.removeChild(allNumber[0]);
+							}
+						}
+						break;
+					case '右侧出':
+						btn[i].onclick = function(){
+							allNumber = document.querySelectorAll('.number-wrap');
+							if(allNumber.length){
+								numberLine.removeChild(allNumber[allNumber.length-1]);
+							}
+						}
+						break;
+				}
+			}
+		})()
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+    <style>
+    .input-line {
+        margin-bottom: 10px;
+    }
+    
+    .container {
+        margin: 0px auto;
+        height: 160px;
+        -webkit-user-select: none;
+    }
+    
+    .item {
+        vertical-align: bottom;
+        width: 16px;
+        margin-right: 3px;
+        display: inline-block;
+        background: red;
+        color: white;
+        transition: height 2s;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="input-line">
+        <button>排序</button>
+    </div>
+    <div class="container">
+        <div class="item"></div>
+    </div>
+    <script>
+    (function() {
+        var content = '',
+            left = 0;
+        var container = document.querySelector('.container');
+        var SortBtn = document.querySelector('button');
+
+        function setRandomNum() {
+            var arr = []
+            for (var i = 0; i < 20; i++) {
+                arr[i] = parseInt(10 + Math.random() * 90);
+            }
+            return arr;
+        }
+        var arr = setRandomNum();
+
+        function render(arr) {
+            left = 0;
+            for (var i in arr) {
+                content += '<div class="item" style="height:' + arr[i] * 1.5 + 'px;">' + arr[i] + '</div>';
+                left += 20;
+            }
+            container.innerHTML = content;
+            content = '';
+        }
+        render(arr);
+        console.log(arr);
+
+        // function bubbleSort(arr) {
+        //     var max = -1,
+        //         index = -1,
+        //         arrLen = arr.length,
+        //         temp;
+        //     for (var i = 0; i < arrLen; i++) {
+        //         index = i;
+        //         max = arr[i];
+        //         for (j = i + 1; j < arrLen; j++) {
+        //             if (arr[j] > max) {
+        //                 max = arr[j];
+        //                 index = j;
+        //             }
+        //         }
+        //         temp = arr[i];
+        //         arr[i] = arr[index];
+        //         arr[index] = temp;
+        //         render();
+        //     }
+        //     return arr;
+        // }
+        function bubbleSort(arr) {
+            var max = -1,
+                index = -1,
+                arrLen = arr.length,
+                temp;
+            var i = 0;
+
+            function bubbleSortRender() {
+                setTimeout(function() {
+                    index = i;
+                    max = arr[i];
+                    for (j = i + 1; j < arrLen; j++) {
+                        if (arr[j] > max) {
+                            max = arr[j];
+                            index = j;
+                        }
+                    }
+                    temp = arr[i];
+                    arr[i] = arr[index];
+                    arr[index] = temp;
+                    render(arr);
+                    i++;
+                    if (i < arrLen) {
+                        bubbleSortRender();
+                    }
+                }, '1000')
+            }
+            bubbleSortRender();
+            return arr;
+        }
+        // var sortArr = bubbleSort(arr);
+        SortBtn.onclick = function() {
+            bubbleSort(arr);
+        };
+
+    })()
+    </script>
+</body>
+
+</html>

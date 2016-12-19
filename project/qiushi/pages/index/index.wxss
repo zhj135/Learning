@@ -1,4 +1,7 @@
 /**index.wxss**/
+.container{
+  /*height: 1200rpx;*/
+}
 .toAskQuestion{
   width: 80%;
   margin: 20rpx auto;
@@ -27,7 +30,7 @@
 .tabNow{
   border-bottom:2px solid #0a964c;
 }
-.squareQuestion{
+.squareQuestionHead{
   display: flex;
   margin: 20rpx 20rpx 0 20rpx;
   color: #999;
@@ -49,8 +52,20 @@
 .squareReward{
   color: #0a964c;
 }
-.questionHead{
+.questionInfoContainer{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+.squareQuestionBody{
+  font-size: 13px;
+  margin-left: 104rpx;
+  margin-top: 10rpx;
+  margin-bottom:20rpx;
+  margin-right: 20rpx;
+  color:#666;
+}
+.squareQuestionEnd{
+  height: 5rpx;
+  background: #e1e1e1;
 }

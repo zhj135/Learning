@@ -15,7 +15,23 @@ function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+function getData(url,obj,successFunc){
+  wx.request({
+    url: url,
+    data:obj,
+    header:{ 
+      'content-type': 'application/json'
+    },
+    method:"GET",
+    success:function(result){
+      successFunc(result)
+    }
+    })
+}
+function postData(){
 
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getData:getData
 }

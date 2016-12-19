@@ -1,0 +1,16 @@
+.container{
+    margin: 30rpx 20rpx;
+}
+.btnLine{
+    display: flex;
+    justify-content: flex-end;
+}
+.btnSubmit{
+    width:176rpx;
+    height: 64rpx;
+    line-height: 62rpx;
+    text-align: center;
+    background: #0a964c;
+    color:white;
+    border-radius: 10rpx;
+}

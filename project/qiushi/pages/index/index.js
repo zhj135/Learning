@@ -1,35 +1,50 @@
 //index.js
-//获取应用实例
+var util = require('../../utils/util.js');
 var app = getApp()
 Page({
   data: {
     questionList:{},
-    totalPages:3
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    totalPages:3,
+    state:0
   },
   onLoad: function(){
     var that = this;
-    wx.request({
-    url: 'https://www.opt.com.cn/allSquareQuest/',
-    data:{
-      state: 0
-    },
-    header:{ 
-      'content-type': 'application/json'
-    },
-    method:"GET",
-    success:function(result){
-      console.log(result)
-      that.setData({questionList:result.data.questionList,totalPage:result.totalPage})
-    },
-    // complete:function(result){
-    //   console.log(result)
-    // }
-  })
+    util.getData(
+      'https://www.opt.com.cn/allSquareQuest/',
+      {state:0},
+      function(result){
+        that.setData({questionList:result.data.questionList,totalPage:result.totalPage})
+      }
+    )
+  },
+  toRewardProtocol:function(){
+    wx.showModal({
+      title: '悬赏规则',
+      content: '细则',
+      confirmText:'我知道了',
+      showCancel:false
+    })
+  },
+  toSolved:function(){
+    this.setData({state:2})
+    var that = this
+    util.getData(
+      'https://www.opt.com.cn/allSquareQuest/',
+      {state:2},
+      function(result){
+        that.setData({questionList:result.data.questionList,totalPage:result.totalPage})
+      }
+    )
+  },
+  toSolving:function(){
+    this.setData({state:0})
+    var that = this
+    util.getData(
+      'https://www.opt.com.cn/allSquareQuest/',
+      {state:0},
+      function(result){
+        that.setData({questionList:result.data.questionList,totalPage:result.totalPage})
+      }
+    )
   }
 })

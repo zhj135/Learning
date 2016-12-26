@@ -28,10 +28,22 @@ function getData(url,obj,successFunc){
     }
     })
 }
-function postData(){
-
+function postData(url,obj,successFunc){
+    console.log(url,obj)
+    wx.request({
+      url: url,
+      data:obj,
+      header:{ 
+        'content-type': 'application/json'
+      },
+      method:"POST",
+      success:function(result){
+        successFunc(result)
+      }
+    })
 }
 module.exports = {
   formatTime: formatTime,
-  getData:getData
+  getData:getData,
+  postData:postData
 }

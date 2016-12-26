@@ -9,6 +9,10 @@ Page({
   },
   onLoad: function(){
     var that = this;
+    wx.setStorage({
+      key:"userId",
+      data:"57a7ffb64fe7f46f7d144305"
+    });
     util.getData(
       'https://www.opt.com.cn/allSquareQuest/',
       {state:0},

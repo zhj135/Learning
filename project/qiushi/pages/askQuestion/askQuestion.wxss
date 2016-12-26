@@ -14,3 +14,17 @@
     color:white;
     border-radius: 10rpx;
 }
+.inputQuestionLine{
+    margin-top:60rpx;
+    margin-bottom: 40rpx;
+}
+.inputQuestion{
+    width:100%;
+    border: 1px solid #e1e1e1;
+    border-radius: 10rpx;
+    height: 300rpx;
+}
+.selectInputLine{
+    display: flex;
+    justify-content: space-between;
+}

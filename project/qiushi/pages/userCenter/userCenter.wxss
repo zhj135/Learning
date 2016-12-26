@@ -1,0 +1,34 @@
+.container{
+    margin: 70rpx 40rpx 0;
+}
+.my-head{
+    height: 140rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60rpx;
+}
+.my-head-name{
+    font-size: 30px;
+    font-weight: bold;
+}
+.my-head-avatar{
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    border: 1px solid #eee;
+}
+.tab-bar{
+    display: flex;
+    height: 110rpx;
+    margin: 30rpx -40rpx 0;
+}
+.tab-bar-item{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+}
+.tab-bar-name,.tab-bar-title{
+    display: flex;
+    justify-content: center;
+}

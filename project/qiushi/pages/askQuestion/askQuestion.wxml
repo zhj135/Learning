@@ -1,8 +1,28 @@
 <view class="container">
     <view class="btnLine">
-        <view class="btnSubmit">
+        <view class="btnSubmit" bindtap="sendQuestion">
             发布
         </view>
     </view>
-    
+    <view class="inputQuestionLine">
+        <textarea class="inputQuestion" maxlength="300" bindblur="textareaBlur"/>
+    </view>
+    <view class="selectInputLine">
+        <view class="inputReward">
+            <view class="RewardTag">悬赏积分</view>
+            <picker bindchange="pickerRewardChange" value="{{indexReward}}" range="{{arrayReward}}">
+                <view class="picker">
+                {{arrayReward[indexReward]}}
+                </view>
+            </picker>
+        </view>
+        <view class="inputTime">
+            <view class="RewardTag">回答时限</view>
+            <picker bindchange="pickerTimeChange" value="{{indexTime}}" range="{{arrayTime}}">
+                <view class="picker">
+                {{arrayTime[indexTime]}}
+                </view>
+            </picker>
+        </view>
+    </view>
 </view>

@@ -1,3 +1,24 @@
 <view class="container">
-    <text>用户中心</text>
+    <view class="my-head">
+        <text class="my-head-name">{{userInfo.name}}</text>
+        <image src="{{userInfo.avatar}}" class="my-head-avatar"></image>
+    </view>
+    <view class="tab-bar">
+        <view class="tab-bar-item">
+            <view class="tab-bar-name">{{userserInfo.fansNum}}</view>
+            <view class="tab-bar-title">关注</view>
+        </view>
+        <view class="tab-bar-item">
+            <view class="tab-bar-name">{{userserInfo.fansNum}}</view>
+            <view class="tab-bar-title">粉丝</view>
+        </view>
+        <view class="tab-bar-item">
+            <view class="tab-bar-name">{{userserInfo.answerNum}}</view>
+            <view class="tab-bar-title">回答</view>
+        </view>
+        <view class="tab-bar-item">
+            <view class="tab-bar-name">{{userserInfo.questionNum}}</view>
+            <view class="tab-bar-title">提问</view>
+        </view>
+    </view>
 </view>

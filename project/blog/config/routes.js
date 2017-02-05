@@ -36,7 +36,19 @@ module.exports.routes = {
   //   // view: 'index'
   //   view: 'homepage'
   // }
-
+  //---------------Login & Register
+    // 跳转到注册页面
+    'get /register': 'AuthController.toRegister',
+    // 处理注册逻辑
+    'post /register': 'AuthController.processRegister',
+    // 跳转到登陆页
+    // 'get /login': {
+    //     view: 'passport/login'
+    // },
+    // 处理登陆逻辑
+    'post /login': 'AuthController.processLogin',
+    // 登出逻辑
+    '/logout': 'AuthController.logout'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

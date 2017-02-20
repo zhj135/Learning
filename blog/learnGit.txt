@@ -4,3 +4,7 @@ git checkout -b <name> 新建并切换分支
 
 git branch <name>
 git checkout <name>
+
+git branch 查看所有分支并显示当前所在分支
+
+git merge <name>	用于合并指定分支到当前分支

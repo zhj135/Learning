@@ -1,0 +1,15 @@
+{
+  "name": "koa-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "middlewareCascade.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node middlewareCascade.js"
+  },
+  "author": "jue",
+  "license": "ISC",
+  "dependencies": {
+    "koa-route": "^3.2.0"
+  }
+}

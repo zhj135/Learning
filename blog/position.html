@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position忽略的地方</title>
+    <style>
+        .container{
+            position: relative;
+            height: 1300px;
+            width: 500px;
+            background: black;
+            transform: scale(1,1);
+            color: white;
+            margin-top: 20px;
+        }
+        .fixed-item{
+            position: fixed;
+            left: 10px;
+            top: 0;
+            right: 20px;
+            height: 60px;
+            background: red;
+        }
+        .sticky-item{
+            position: sticky;
+            top: 80px;
+            background: blue;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-item">
+            position: fixed
+            指定元素相对屏幕视口位置，但当元素祖先transform属性不为none时，容器由视口改为该祖先
+            当宽高不为auto时，同时设置top,bottom优先top，而left,right则视文字书写顺序而定，中文为left
+        </div>
+        <div class="sticky-item">
+            position:sticky
+            粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。不支持IE所有版本及绝大部分手机浏览器
+        </div>
+    </div>
+</body>
+</html>

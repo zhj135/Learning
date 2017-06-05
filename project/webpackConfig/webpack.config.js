@@ -2,7 +2,6 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log('NODE_ENV', process.env.NODE_ENV);
 module.exports = {
     context: resolve(__dirname, 'src'),
     entry: [
@@ -54,7 +53,7 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         // prints more readable module names in the browser console on HMR updates
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': 'dev'
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
 
     ],

@@ -16,7 +16,7 @@ const render = (Component) => {
 };
 
 render(App);
-
+console.log('index::', process.env.NODE_ENV)
 // Hot Module Replacement API
 if (module.hot) {
     module.hot.accept('./components/App', () => {

@@ -2,6 +2,7 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+console.log('config::', process.env.NODE_ENV);
 module.exports = {
     context: resolve(__dirname, 'src'),
     entry: [

@@ -8,6 +8,7 @@ function mul(x){
 	result.valueOf = function(){
 		return x;
 	}
+	console.log(result)
 	return result
 }
-console.log(mul(2)(3)(4)(5))
+mul(2)

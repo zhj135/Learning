@@ -10,3 +10,10 @@ git branch 查看所有分支并显示当前所在分支
 git merge <name>	用于合并指定分支到当前分支
 
 git branch -d <name> 删除分支
+
+git status 查看仓库状态
+
+git log 查看操作记录
+
+git show <id> 查看提交内容
+

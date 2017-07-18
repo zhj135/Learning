@@ -4,7 +4,7 @@
   "description": "在hmr基础上增加eslint",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "NODE_ENV=beta webpack-dev-server"
   },
   "dependencies": {
     "react": "^15.4.2",

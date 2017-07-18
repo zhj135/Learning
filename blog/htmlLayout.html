@@ -1,0 +1,107 @@
+<!-- 三栏布局的实现方式 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方式一： 左右浮动，中间元素设置margin</title>
+	<style>
+		.left{
+			float: left;
+			width: 200px;
+			background-color: red;
+			height: 100px;
+		}
+		.right{
+			float: right;
+			width: 200px;
+			background-color: yellow;
+			height: 100px;
+		}
+		.middle{
+			margin-left: 200px;
+			margin-right: 200px;
+			background-color: orange;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="right"></div>
+	<div class="middle"></div>
+</body>
+</html>
+
+ 方式二 , calc属性在IE系列中只在IE11下生效
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方式二，css新属性，calc</title>
+	<style>
+		.left{
+			float: left;
+			width: 200px;
+			background-color: red;
+			height: 100px;
+		}
+		.middle{
+			float: left;
+			width: calc(100% - 400px);
+			background-color: orange;
+			height: 100px;
+		}
+		.right{
+			float: left;
+			width: 200px;
+			background-color: yellow;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</body>
+</html>
+
+<!-- 方式三 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>方式三，绝对定位</title>
+	<style>
+		.left{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200px;
+			background-color: red;
+			height: 100px;
+		}
+		.middle{
+			margin-left: 200px;
+			margin-right: 200px;
+			background-color: orange;
+			height: 100px;
+		}
+		.right{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 200px;
+			background-color: yellow;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="middle"></div>
+	<div class="right"></div>
+</body>
+</html>

@@ -1,9 +1,10 @@
 const arr = [];
 for (let i = 0; i < 10; i++) {
-	let temp = Math.random() * 100;
+	let temp = Math.random() * 1000;
 	arr.push(parseInt(temp));
 }
 console.log('init::', arr);
+
 function swap(arr, a, b) {
 	if (a === b) {
 		return;

@@ -1,13 +1,13 @@
 const { arr, swap } = require('./common.js');
 // 插入排序，类似扑克抓牌时的理牌方式，将新元素依次与前一个数组值比较，交换，直至正确位置
-for (let i = 1; i < arr.length; i += 1) {
-  for (let j = i - 1; j >= 0; j -= 1) {
-    if (arr[j] > arr[j + 1]) {
-      swap(arr, j, j + 1)
-    }
-  }
-}
-
+// for (let i = 1; i < arr.length; i += 1) {
+//   for (let j = i - 1; j >= 0; j -= 1) {
+//     if (arr[j] > arr[j + 1]) {
+//       swap(arr, j, j + 1)
+//     }
+//   }
+// }
+console.time('test')
 
 // v8中对长度10以内的数组，选用插入排序
 const comparefn = function (x, y) {
@@ -33,4 +33,5 @@ function InsertionSort(a, from, to) {
 };
 InsertionSort(arr, 0, arr.length)
 console.log('arr::', arr);
+console.timeEnd('test')
 

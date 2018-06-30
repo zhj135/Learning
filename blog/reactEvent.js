@@ -1,3 +1,7 @@
+// 18年6月29日，此时React官方文档已经加入了传递参数的两种方式，与之前总结的相符：
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+
 //React中事件如何传递参数
 //React官方文档中并没有与之相关的信息，百度谷歌之后整理了一套解决方案
 class MyMission extends Component{

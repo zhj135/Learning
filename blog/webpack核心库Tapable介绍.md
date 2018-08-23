@@ -1,5 +1,5 @@
 ## webpack核心库Tapable介绍
-### 什么是Tapable？
+### 什么是Tapable？
 
 webpack是时下前端最流行的打包工具，而webpack的核心机制，插件（plugin）功能就是由短小精悍的Tapable模块提供的。
 Tapable的功能和Node的EventEmitter模块有点类似，提供了事件机制。
@@ -28,7 +28,7 @@ Tapable在18年初经历了一次重构，配合webpack4，带来了新的插件
 webpack4中的compiler使用hooks属性实现插件机制，为了兼容旧版本的webpack，加入了else部分的代码。
 
 
-### Tapable使用实例
+### Tapable使用实例
 
 分析源码前，我们先来看看webpack是如何使用tapable的，不然一头钻进源码只会手足无措。既然是事件机制，就有添加事件监听器和触发事件的行为。
 添加事件监听器：类似Node中EventEmitter模块的emitter.on，在webpack生态体系里，我们在编写插件的时候去添加监听，如上面代码中的compilation.hooks.buildModule.tap(plugin, buildModuleFn)，就给buildModule事件添加了监听。
@@ -51,7 +51,7 @@ webpack4中的compiler使用hooks属性实现插件机制，为了兼容旧版�
     // 触发buildModule事件
     this.hooks.buildModule.call(module);
 
-### Tapable源码分析
+### Tapable源码分析
 
 Tabable中有许多不同种类的事件类型（同步、异步、执行方式），我们以上面的SyncHook为例，看看是如何实现事件机制的：
     const Hook = require("./Hook");

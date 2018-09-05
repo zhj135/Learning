@@ -131,7 +131,7 @@ depend函数调用了Dep.target的相关函数，那Dep.target是什么呢，文
 
 这里对添加的依赖做了去重处理，防止重复添加依赖。那么这个依赖的作用是什么呢？是去更新DOM的过程，DOM的更新过程是一个很大的话题，我们暂且不深入研究，再来看set函数触发依赖, notify()中update函数，update调用了queueWatcher函数，queueWatcher中有这么一行：nextTick(flushSchedulerQueue)，这里的nextTick和我们平常在业务代码中使用的$nextTick是同一个函数，作用就是让DOM更新延迟进行，对数据进行缓冲，防止重复的大批量的DOM更新，React中的DOM更新也是类似的策略。改变状态值和DOM更新并不是同步的操作。回到flushSchedulerQueue，这个函数对缓存的数组每一项执行run函数，run调用了getAndInvoke，getAndInvoke中调用了get, get中调用了new Watcher时传入的updateComponent,顾名思义，这个函数的作用就是去更新DOM。
 
-以上就是vue中依赖收集及触发的一个概览，阅读源码时先要找准代码的主体思路，不要太纠结每一句代码，每一个函数的具体实现，不然会迷失在细节中，就像画一棵树一样，现有树的躯干，树枝，才有一片片的树叶。这篇文章参考了HcySunYang的Vue技术内幕（http://hcysun.me/vue-design/art/），但是建议大家不要一开始就看别人源码分析的文章，就像做题一样，总是不经过太多思考直接看答案总是不好的。
+以上就是vue中依赖收集及触发的一个概览，阅读源码时先要找准代码的主体思路，不要太纠结每一句代码，每一个函数的具体实现，不然会迷失在细节中，就像画一棵树一样，现有树的躯干，树枝，才有一片片的树叶。这篇文章参考了HcySunYang的Vue技术内幕（http://hcysun.me/vue-design/art),但是建议大家不要一开始就看别人源码分析的文章，就像做题一样，总是不经过太多思考直接看答案总是不好的。
 
 
 

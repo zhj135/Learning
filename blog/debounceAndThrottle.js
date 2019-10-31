@@ -22,8 +22,9 @@ function debounce(func, wait) {
     if (timerId) {
       clearTimeout(timerId)
     }
+    const context = this
     timerId = setTimeout(() => {
-      func()
+      func.apply(context, args)
     }, wait);
   }
   return invokeFunc
